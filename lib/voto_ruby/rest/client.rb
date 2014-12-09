@@ -21,6 +21,8 @@ module VotoMobile
         host: 'go.votomobile.org/api/v1',
         port: 443,
         use_ssl: true,
+        ssl_verify_peer: true,
+        ssl_ca_file: File.dirname(__FILE__) + '/../../../conf/cacert.pem',
         timeout: 30,
         proxy_addr: nil,
         proxy_port: nil,
