@@ -1,5 +1,7 @@
 # VotoRuby
 
+[![Build Status](https://travis-ci.org/bluesquaredotorg/voto-ruby.svg?branch=master)](https://travis-ci.org/bluesquaredotorg/voto-ruby) [![Gem Version](https://badge.fury.io/gh/bluesquaredotorg%2Fvoto-ruby.svg)](http://badge.fury.io/gh/bluesquaredotorg%2Fvoto-ruby) [![Coverage Status](https://img.shields.io/coveralls/bluesquaredotorg/voto-ruby.svg)](https://coveralls.io/r/bluesquaredotorg/voto-ruby)
+
 A module for using the VOTO Mobile REST API.
 
 ## Installation
