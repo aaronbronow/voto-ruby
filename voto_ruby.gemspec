@@ -5,7 +5,7 @@ require 'voto_ruby/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "voto_ruby"
-  spec.version       = VotoRuby::VERSION
+  spec.version       = VotoMobile::VERSION
   spec.authors       = ["BlueSquare.org"]
   spec.email         = ["opensource@bluesquare.org"]
   spec.summary       = %q{A Ruby gem for communicating with the VOTO Mobile API}
