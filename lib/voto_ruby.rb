@@ -1,9 +1,9 @@
 require 'net/http'
 require 'net/https'
 require 'builder'
-require 'multi_json'
 require 'openssl'
 require 'forwardable'
+require 'multi_json'
 
 require 'voto_ruby/version'
 require 'voto_ruby/util'

@@ -18,7 +18,7 @@ module VotoMobile
       }
 
       DEFAULTS = {
-        host: 'go.votomobile.org/api/v1',
+        host: 'go.votomobile.org',
         port: 443,
         use_ssl: true,
         timeout: 30,
@@ -45,6 +45,29 @@ module VotoMobile
 
         set_up_connection
         set_up_subresources
+      end
+      
+      ##
+      # Define #get, #put, #post and #delete helper methods for sending HTTP
+      # requests to Voto. You shouldn't need to use these methods directly,
+      # but they can be useful for debugging. Each method returns a hash
+      # obtained from parsing the JSON object in the response body.
+      [:get, :put, :post, :delete].each do |method|
+        method_class = Net::HTTP.const_get method.to_s.capitalize
+        define_method method do |path, *args|
+          # params = twilify args[0]; params = {} if params.empty?
+          params = {
+            api_key: @auth_token
+          }
+          unless args[1] # build the full path unless already given
+            path = "/api/v1/#{path}"
+            path << "?#{URI.encode_www_form(params)}" if method == :get && !params.empty?
+          end
+          request = method_class.new path, HTTP_HEADERS
+          request.basic_auth @account_sid, @auth_token
+          request.form_data = params if [:post, :put].include? method
+          connect_and_send request
+        end
       end
 
       private
@@ -79,6 +102,34 @@ module VotoMobile
       def set_up_subresources # :doc:
         # @accounts = Twilio::REST::Accounts.new "/#{API_VERSION}/Accounts", self
         # @account = @accounts.get @account_sid
+      end
+      
+      ##
+      # Send an HTTP request using the cached <tt>@connection</tt> object and
+      # return the JSON response body parsed into a hash. Also save the raw
+      # Net::HTTP::Request and Net::HTTP::Response objects as
+      # <tt>@last_request</tt> and <tt>@last_response</tt> to allow for
+      # inspection later.
+      def connect_and_send(request) # :doc:
+        @last_request = request
+        retries_left = @config[:retry_limit]
+        begin
+          response = @connection.request request
+          @last_response = response
+          if response.kind_of? Net::HTTPServerError
+            raise Error # Twilio::REST::ServerError
+          end
+        rescue Exception
+          raise if request.class == Net::HTTP::Post
+          if retries_left > 0 then retries_left -= 1; retry else raise end
+        end
+        if response.body and !response.body.empty?
+          object = MultiJson.load response.body
+        end
+        if response.kind_of? Net::HTTPClientError
+          raise VotoMobile::REST::RequestError.new object['message'], object['code']
+        end
+        object
       end
     end
   end
