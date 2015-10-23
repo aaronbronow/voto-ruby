@@ -11,6 +11,7 @@ require 'voto_ruby/util/configuration'
 require 'voto_ruby/util/request_validator'
 require 'voto_ruby/util/capability'
 require 'voto_ruby/rest/client'
+require 'voto_ruby/rest/errors'
 
 module VotoMobile
   extend SingleForwardable
