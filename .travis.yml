@@ -2,7 +2,8 @@ language: ruby
 cache: bundler
 
 rvm:
-  - 2.1.1
+  - 2.2.2
+  - 2.0.0
   - 1.9.3
 
 script: 'bundle exec rake'
@@ -10,6 +11,6 @@ script: 'bundle exec rake'
 notifications:
   email:
     recipients:
-      - mhulet@bluesquare.org
+      - abronow@goodworldsolutions.org
     on_failure: change
     on_success: never
