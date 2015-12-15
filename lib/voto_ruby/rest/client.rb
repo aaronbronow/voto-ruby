@@ -9,9 +9,8 @@ module VotoMobile
     # https://github.com/twilio/twilio-ruby/blob/master/lib/twilio-ruby/rest/client.rb
     #
     class Client
-      
       include VotoMobile::Util
-      
+      API_VERSION = 'v1'
       HTTP_HEADERS = {
         'Accept' => 'application/json',
         'Accept-Charset' => 'utf-8',
@@ -32,18 +31,15 @@ module VotoMobile
         retry_limit: 1
       }
 
-      # attr_reader :account_sid, :account, :accounts, :last_request,
-      #   :last_response
-
       def initialize(*args)
         options = args.last.is_a?(Hash) ? args.pop : {}
         @config = DEFAULTS.merge! options
 
-        # @account_sid = args[0] || VotoMobile.account_sid
         @auth_token = args[0] || VotoMobile.auth_token
-        # if @account_sid.nil? || @auth_token.nil?
         if @auth_token.nil?
           raise ArgumentError, 'API key is required'
+        else
+          HTTP_HEADERS['api_key'] = @auth_token
         end
 
         set_up_connection
@@ -59,12 +55,12 @@ module VotoMobile
         method_class = Net::HTTP.const_get method.to_s.capitalize
         define_method method do |path, *args|
           params = args[0].to_a; params = [] if args.empty?
-          params.push [ 'api_key', @auth_token ]
           unless args[1] # build the full path unless already given
-            path = "/api/v1/#{path}"
+            path = "/api/#{API_VERSION}/#{path}"
             path << "?#{url_encode(params)}" if method == :get && !params.empty?
           end
           request = method_class.new path, HTTP_HEADERS
+          request.initialize_http_header({"api_key" => @auth_token})
           # request.basic_auth @account_sid, @auth_token
           request.form_data = params if [:post, :put].include? method
           connect_and_send request
@@ -115,10 +111,12 @@ module VotoMobile
         @last_request = request
         retries_left = @config[:retry_limit]
         begin
-          response = @connection.request request
+          response = @connection.start do |http|
+            http.request request
+          end
           @last_response = response
           if response.kind_of? Net::HTTPServerError
-            raise Error # Twilio::REST::ServerError
+            raise VotoMobile::REST::ServerError
           end
         rescue Exception
           raise if request.class == Net::HTTP::Post
