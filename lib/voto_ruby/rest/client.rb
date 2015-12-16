@@ -1,3 +1,4 @@
+require 'voto_ruby/rest/base_list'
 require 'voto_ruby/rest/base_client'
 require 'voto_ruby/rest/client/incoming_calls'
 require 'voto_ruby/rest/client/subscribers'
