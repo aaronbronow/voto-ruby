@@ -3,6 +3,7 @@ require 'voto_ruby/rest/base_client'
 require 'voto_ruby/rest/client/incoming_calls'
 require 'voto_ruby/rest/client/subscribers'
 require 'voto_ruby/rest/client/surveys'
+require 'voto_ruby/rest/client/questions'
 
 module VotoMobile
   module REST
@@ -10,6 +11,7 @@ module VotoMobile
       include VotoMobile::IncomingCalls
       include VotoMobile::Subscribers
       include VotoMobile::Surveys
+      include VotoMobile::Questions
       
       def initialize(*args)
         super(*args)
