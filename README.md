@@ -35,7 +35,32 @@ The ‘api_key’ can also be posted in the header of the request.
 
 ###Client
 
-```client = VotoMobile::REST::Client.new '#{api_key}'```
+```
+# Get a with your API Key
+client = VotoMobile::REST::Client.new '#{api_key}'
+
+# Subscribers
+client.subscribers
+
+# Surveys
+client.surveys
+
+# Questions
+client.questions(survey_id)
+
+```
+
+###Pagination
+
+```
+# If pagination is enabled on the endpoint method you are using (in this case, subscribers)...
+subscribers = client.subscribers
+
+# Use the next() method to retrieve a new SubscribersList object which contains the next page of records and has next() and previous() methods.
+subscribers = subscribers.next
+
+```
+Note: The default page limit is 100 records.
 
 ## Contributing
 
