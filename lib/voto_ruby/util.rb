@@ -11,5 +11,12 @@ module VotoMobile
         URI.encode obj.to_s
       end
     end
+    
+    def try_paginate(data, list)
+      if data['code'] == 1001
+        list.next_url = data['pagination']['nextURL']
+        list.previous_url = data['pagination']['previousURL']
+      end
+    end
   end
 end
