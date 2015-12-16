@@ -61,7 +61,6 @@ module VotoMobile
           end
           request = method_class.new path, HTTP_HEADERS
           request.initialize_http_header({"api_key" => @auth_token})
-          # request.basic_auth @account_sid, @auth_token
           request.form_data = params if [:post, :put].include? method
           connect_and_send request
         end
