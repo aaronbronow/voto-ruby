@@ -28,7 +28,8 @@ module VotoMobile
         proxy_port: nil,
         proxy_user: nil,
         proxy_pass: nil,
-        retry_limit: 1
+        retry_limit: 1,
+        limit: 500
       }
 
       def initialize(*args)

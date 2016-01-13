@@ -56,7 +56,8 @@ client.questions(survey_id)
 # If pagination is enabled on the endpoint method you are using (in this case, subscribers)...
 subscribers = client.subscribers
 
-# Use the next() method to retrieve a new SubscribersList object which contains the next page of records and has next() and previous() methods.
+# Use the next() method to retrieve a new SubscribersList object which contains the next 
+# page of records and has next() and previous() methods.
 subscribers = subscribers.next
 
 ```

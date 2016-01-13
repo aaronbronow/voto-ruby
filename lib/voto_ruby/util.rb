@@ -13,7 +13,7 @@ module VotoMobile
     end
     
     def try_paginate(data, list)
-      if data['code'] == 1001
+      if data['pagination']
         list.next_url = data['pagination']['nextURL']
         list.previous_url = data['pagination']['previousURL']
       end
