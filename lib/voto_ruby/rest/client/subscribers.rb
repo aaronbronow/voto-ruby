@@ -1,11 +1,8 @@
 module VotoMobile
   module Subscribers
-    def subscribers(path = nil)
-      list = SubscribersList.new self, 'subscribers'
-      data = path.nil? ? get('subscribers') : get('subscribers', {}, path)
-      try_paginate(data, list)
-      list.data = data['data']['subscribers']
-      list
+    def subscribers(full_path = nil)
+      list = SubscribersList.new(self, 'subscribers')
+      get_data(list, 'subscribers', full_path)
     end
   end
   

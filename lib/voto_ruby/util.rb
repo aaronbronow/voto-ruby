@@ -13,10 +13,19 @@ module VotoMobile
     end
     
     def try_paginate(data, list)
+      list.status = data['code']
       if data['pagination']
         list.next_url = data['pagination']['nextURL']
         list.previous_url = data['pagination']['previousURL']
       end
+    end
+
+    def get_data(list, data_name, full_path, params = {})
+      path = full_path.nil? ? data_name : full_path
+      data = get(path, params, !full_path.nil?)
+      try_paginate(data, list)
+      list.data = data['data'][data_name]
+      list
     end
   end
 end
