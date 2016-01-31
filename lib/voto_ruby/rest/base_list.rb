@@ -1,6 +1,6 @@
 module VotoMobile
   class BaseList
-    attr_accessor :next_url, :previous_url, :data
+    attr_accessor :next_url, :previous_url, :status, :data
     
     def initialize(client, path_segment)
       @client = client

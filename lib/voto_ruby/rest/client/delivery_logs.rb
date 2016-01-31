@@ -1,21 +1,17 @@
 module VotoMobile
   module DeliveryLogs
     DEFAULTS = {
-      limit: 500
+        limit: 500
     }
-    def delivery_logs(path = nil)
-      list = DeliveryLogsList.new self, 'delivery_logs'
-      query = "delivery_logs"
-      data = path.nil? ? get(query, {'limit'=>DEFAULTS[:limit]}) : get(path, {'limit'=>DEFAULTS[:limit]}, true)
-      try_paginate(data, list)
-      list.data = data['data']['delivery_logs']
-      list
+    def delivery_logs(full_path = nil)
+      list = DeliveryLogsList.new(self, 'delivery_logs')
+      get_data(list, 'delivery_logs', full_path, { limit: DEFAULTS[:limit] })
     end
     
-    def delivery_logs_by_incoming_call(id, path=nil)
-      list = DeliveryLogsList.new self, 'delivery_logs'
-      query = "incoming_calls/#{id}/delivery_logs"
-      data = path.nil? ? get(query, {'limit'=>DEFAULTS[:limit]}) : get(path, {'limit'=>DEFAULTS[:limit]}, true)
+    def delivery_logs_by_incoming_call(id)
+      list = DeliveryLogsList.new(self, 'delivery_logs')
+      path = "incoming_calls/#{id}/delivery_logs"
+      data = get(path, { limit: DEFAULTS[:limit] })
       try_paginate(data, list)
       list.data = data['data']['delivery_logs']
       list
