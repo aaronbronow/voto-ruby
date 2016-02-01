@@ -5,6 +5,8 @@ module VotoMobile
       get_data(list, 'incoming_calls', full_path)
     end
   end
-  
-  class IncomingCallsList < BaseList; end
+
+  class IncomingCallsList < BaseList
+    ENTITY = IncomingCall
+  end
 end

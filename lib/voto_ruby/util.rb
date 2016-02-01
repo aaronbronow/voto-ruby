@@ -24,7 +24,7 @@ module VotoMobile
       path = full_path.nil? ? data_name : full_path
       data = get(path, params, !full_path.nil?)
       try_paginate(data, list)
-      list.data = data['data'][data_name]
+      list.assign_data(data['data'][data_name])
       list
     end
   end
