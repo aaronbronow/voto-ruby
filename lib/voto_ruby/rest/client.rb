@@ -32,6 +32,10 @@ module VotoMobile
       def initialize(*args)
         super(*args)
       end
+      
+      def ping
+        get 'ping'
+      end
 
       def inspect # :nodoc:
         "<VotoMobile::REST::Client @api_key=#{@auth_token}>"
