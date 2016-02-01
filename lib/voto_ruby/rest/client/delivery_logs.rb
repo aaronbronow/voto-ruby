@@ -13,19 +13,21 @@ module VotoMobile
       path = "incoming_calls/#{id}/delivery_logs"
       data = get(path, { limit: DEFAULTS[:limit] })
       try_paginate(data, list)
-      list.data = data['data']['delivery_logs']
+      list.assign_data(data['data']['delivery_logs'])
       list
     end
-    
-    def delivery_logs_by_survey(id)
+
+    def delivery_logs_by_survey(survey_id)
       list = DeliveryLogsList.new(self, 'delivery_logs')
-      path = "surveys/#{id}/delivery_logs"
+      path = "surveys/#{survey_id}/delivery_logs"
       data = get(path, { limit: DEFAULTS[:limit] })
       try_paginate(data, list)
-      list.data = data['data']['delivery_logs']
+      list.assign_data(data['data']['delivery_logs'])
       list
     end
   end
-  
-  class DeliveryLogsList < BaseList; end
+
+  class DeliveryLogsList < BaseList
+    ENTITY = DeliveryLog
+  end
 end

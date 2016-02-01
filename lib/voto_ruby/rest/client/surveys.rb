@@ -5,6 +5,8 @@ module VotoMobile
       get_data(list, 'surveys', full_path)
     end
   end
-  
-  class SurveysList < BaseList; end
+
+  class SurveysList < BaseList
+    ENTITY = Survey
+  end
 end

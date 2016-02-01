@@ -4,10 +4,12 @@ module VotoMobile
       list = QuestionsList.new self, 'questions'
       data = get("surveys/#{survey_id}/questions")
       try_paginate(data, list)
-      list.data = data['data']['questions']
+      list.assign_data(data['data']['questions'])
       list
     end
   end
-  
-  class QuestionsList < BaseList; end
+
+  class QuestionsList < BaseList
+    ENTITY = Question
+  end
 end
