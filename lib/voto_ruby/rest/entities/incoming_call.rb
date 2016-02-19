@@ -25,5 +25,9 @@ module VotoMobile
     def delivery_logs
       @client.delivery_logs_by_incoming_call(@id)
     end
+
+    def counts
+      @client.incoming_call_counts(@id)
+    end
   end
 end
