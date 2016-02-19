@@ -12,8 +12,12 @@ module VotoMobile
                   :audio_files,
                   :sms_content
 
-    def responses
-      @client.responses_by_question(@survey_id, @id)
+    def responses(filters = {})
+      @client.responses_by_question(@survey_id, @id, filters)
+    end
+
+    def counts(filters = {})
+      @client.question_counts(@survey_id, @id, filters)
     end
   end
 end

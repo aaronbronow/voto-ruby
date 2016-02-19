@@ -11,6 +11,10 @@ module VotoMobile
                   :average_audio_length,
                   :total_audio_length,
                   :average_audio_lengh,
-                  :total_audio_lengh
+                  :total_audio_lengh,
+                  :response_average,
+                  :response_std,
+                  :response_max,
+                  :response_min
   end
 end
