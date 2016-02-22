@@ -22,12 +22,12 @@ module VotoMobile
                   :updated_at,
                   :webhook
 
-    def delivery_logs
-      @client.delivery_logs_by_incoming_call(@id)
+    def delivery_logs(filters = {})
+      @client.delivery_logs_by_incoming_call(@id, filters)
     end
 
-    def counts
-      @client.incoming_call_counts(@id)
+    def counts(filters = {})
+      @client.incoming_call_counts(@id, filters)
     end
   end
 end
