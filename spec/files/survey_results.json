@@ -1,0 +1,93 @@
+{
+  "status": 200,
+  "code": 1000,
+  "data": {
+    "survey": {
+      "id": "204561",
+      "survey_title": "Labor Link Demo v2"
+    },
+    "results": [{
+      "question_id": "219338",
+      "question_title": "Q1",
+      "question_number": "1",
+      "response_type": "1",
+      "total_responses": 33,
+      "choice_responses": [{
+        "id": "261743",
+        "name": "1",
+        "num_responses": "14",
+        "percentage": 42.424242424242
+      }, {
+        "id": "261744",
+        "name": "2",
+        "num_responses": "13",
+        "percentage": 39.393939393939
+      }, {
+        "id": "261747",
+        "name": "2",
+        "num_responses": "20",
+        "percentage": 64.516129032258
+      }]
+    }, {
+      "question_id": "219339",
+      "question_title": "Q2",
+      "question_number": "2",
+      "response_type": "1",
+      "total_responses": 31,
+      "choice_responses": [{
+        "id": "261746",
+        "name": "1",
+        "num_responses": "11",
+        "percentage": 35.483870967742
+      }, {
+        "id": "261749",
+        "name": "2",
+        "num_responses": "10",
+        "percentage": 40
+      }]
+    }, {
+      "question_id": "219340",
+      "question_title": "Q3",
+      "question_number": "3",
+      "response_type": "1",
+      "total_responses": 25,
+      "choice_responses": [{
+        "id": "261748",
+        "name": "1",
+        "num_responses": "15",
+        "percentage": 60
+      }, {
+        "id": "261752",
+        "name": "3",
+        "num_responses": "10",
+        "percentage": 41.666666666667
+      }]
+    }, {
+      "question_id": "219341",
+      "question_title": "Q4",
+      "question_number": "4",
+      "response_type": "1",
+      "total_responses": 24,
+      "choice_responses": [{
+        "id": "261750",
+        "name": "1",
+        "num_responses": "9",
+        "percentage": 37.5
+      }, {
+        "id": "261751",
+        "name": "2",
+        "num_responses": "5",
+        "percentage": 20.833333333333
+      }, {
+        "id": "261752",
+        "name": "3",
+        "num_responses": "10",
+        "percentage": 41.666666666667
+      }]
+    }]
+  },
+  "message": "Survey results fetched successfully",
+  "more_info": "",
+  "pagination": null,
+  "url": "https://go.votomobile.org/api/v1/surveys/204561/results"
+}

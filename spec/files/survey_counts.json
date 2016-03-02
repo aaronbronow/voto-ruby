@@ -1,0 +1,12 @@
+{
+  "status": 200,
+  "code": 1000,
+  "data": {
+    "survey_id": "204561",
+    "count": 69
+  },
+  "message": "Fetched Survey Counts: times accessed.",
+  "more_info": "",
+  "pagination": null,
+  "url": "https://go.votomobile.org/api/v1/surveys/204561/counts"
+}

@@ -1,0 +1,21 @@
+{
+  "status": 200,
+  "code": 1000,
+  "data": {
+    "question": {
+      "id": "219340",
+      "title": "Q3",
+      "survey_id": "204561",
+      "question_number": "3",
+      "num_choices": "2",
+      "response_type": "1",
+      "is_conditional": "0"
+    },
+    "number_of_respondents": "12",
+    "number_of_responses": 25
+  },
+  "message": "Survey Question Response Count Fetched Successfully",
+  "more_info": "",
+  "pagination": null,
+  "url": "https://go.votomobile.org/api/v1/surveys/204561/questions/219340/counts"
+}

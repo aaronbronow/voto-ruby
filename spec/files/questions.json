@@ -1,0 +1,91 @@
+{
+  "status": 200,
+  "code": 1000,
+  "data": {
+    "questions": [{
+      "id": "219338",
+      "title": "Q1",
+      "survey_id": "204561",
+      "response_type": "1",
+      "webhook_enabled": "0",
+      "question_number": "1",
+      "num_choices": "3",
+      "options": ["1", "2", "3"],
+      "audio_files": [{
+        "language_id": "201910",
+        "language_name": "English",
+        "audio_file_id": "217795",
+        "audio_file_description": "Uploaded file: demo1.wav"
+      }],
+      "sms_content": [{
+        "language_id": "201910",
+        "language_name": "English",
+        "sms_content": null
+      }]
+    }, {
+      "id": "219339",
+      "title": "Q2",
+      "survey_id": "204561",
+      "response_type": "1",
+      "webhook_enabled": "0",
+      "question_number": "2",
+      "num_choices": "2",
+      "options": ["1", "2"],
+      "audio_files": [{
+        "language_id": "201910",
+        "language_name": "English",
+        "audio_file_id": "217796",
+        "audio_file_description": "Uploaded file: demo2.wav"
+      }],
+      "sms_content": [{
+        "language_id": "201910",
+        "language_name": "English",
+        "sms_content": null
+      }]
+    }, {
+      "id": "219340",
+      "title": "Q3",
+      "survey_id": "204561",
+      "response_type": "1",
+      "webhook_enabled": "0",
+      "question_number": "3",
+      "num_choices": "2",
+      "options": ["1", "2"],
+      "audio_files": [{
+        "language_id": "201910",
+        "language_name": "English",
+        "audio_file_id": "217797",
+        "audio_file_description": "Uploaded file: demo3.wav"
+      }],
+      "sms_content": [{
+        "language_id": "201910",
+        "language_name": "English",
+        "sms_content": null
+      }]
+    }, {
+      "id": "219341",
+      "title": "Q4",
+      "survey_id": "204561",
+      "response_type": "1",
+      "webhook_enabled": "0",
+      "question_number": "4",
+      "num_choices": "3",
+      "options": ["1", "2", "3"],
+      "audio_files": [{
+        "language_id": "201910",
+        "language_name": "English",
+        "audio_file_id": "217798",
+        "audio_file_description": "Uploaded file: demo4.wav"
+      }],
+      "sms_content": [{
+        "language_id": "201910",
+        "language_name": "English",
+        "sms_content": null
+      }]
+    }]
+  },
+  "message": "Survey questions and details fetched successfully",
+  "more_info": "",
+  "pagination": null,
+  "url": "https://go.votomobile.org/api/v1/surveys/204561/questions"
+}
