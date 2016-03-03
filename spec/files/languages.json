@@ -1,0 +1,15 @@
+{
+  "status": 200,
+  "code": 1000,
+  "data": {
+    "languages": [{
+      "id": "201910",
+      "name": "English",
+      "abbreviation": "EN"
+    }]
+  },
+  "message": "Languages fetched successfully ",
+  "more_info": "",
+  "pagination": null,
+  "url": "https://go.votomobile.org/api/v1/languages"
+}

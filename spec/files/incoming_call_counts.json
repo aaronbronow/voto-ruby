@@ -1,0 +1,12 @@
+{
+  "status": 200,
+  "code": 1000,
+  "data": {
+    "incoming_call_id": "200320",
+    "count": 25
+  },
+  "message": "Fetched Incoming Call Counts: times accessed.",
+  "more_info": "",
+  "pagination": null,
+  "url": "https://go.votomobile.org/api/v1/incoming_calls/200320/counts"
+}
