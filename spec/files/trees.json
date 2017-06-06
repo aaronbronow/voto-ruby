@@ -1,0 +1,41 @@
+{
+  "status":200,
+  "code":1000,
+  "data":{
+    "trees":[
+      {
+        "id":"3",
+        "title":"Tree One",
+        "description":"",
+        "has_voice":"1",
+        "has_sms":"0",
+        "has_ussd":"0",
+        "starting_block_id":"48",
+        "is_interactive":"1",
+        "created_at":"2016-03-23 20:41:39",
+        "updated_at":"2016-03-27 20:05:46",
+        "num_blocks":"4"
+      },
+      {
+        "id":"4",
+        "title":"Tree One (Copy)",
+        "description":"",
+        "has_voice":"1",
+        "has_sms":"0",
+        "has_ussd":"0",
+        "starting_block_id":"74",
+        "is_interactive":"1",
+        "created_at":"2016-03-31 17:32:53",
+        "updated_at":"2016-03-31 17:37:59",
+        "num_blocks":"10"
+      }
+    ]
+  },
+  "message":"Trees fetched successfully",
+  "more_info":"",
+  "pagination":{
+    "nextURL":"https://192.168.3.5/api/v1/trees?api_key=125d50ceb4e4e2186cf47e3c3&page_after=4",
+    "previousURL":null
+  },
+  "url":"https://192.168.3.5/api/v1/trees?api_key=125d50ceb4e4e2186cf47e3c3"
+}

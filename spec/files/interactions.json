@@ -1,0 +1,117 @@
+{
+  "status": 200,
+  "code": 1000,
+  "data": {
+    "tree": {
+      "id": "10",
+      "starting_block_id": "227",
+      "num_blocks": "8"
+    },
+    "block": [
+      {
+        "id": "228",
+        "type": "Multiple Choice Question",
+        "class": "MultipleChoiceQuestionBlock",
+        "num_outputs": "2",
+        "is_interactive": 1
+      }
+    ],
+    "number_of_responses": 5,
+    "interactions": [
+      {
+        "subscriber_id": "332",
+        "delivery_log_id": "240",
+        "block_interaction_id": "115",
+        "block_id": "228",
+        "block_type": "Multiple Choice Question",
+        "title": "Are you in a City or a Village?",
+        "response": {
+          "choice_id": "2",
+          "choice_name": "Village",
+          "choice_sms_input": null,
+          "choice_ussd_input": "2",
+          "created_at": "2016-05-08 19:42:06"
+        },
+        "number_of_repeats": "0",
+        "entry_at": "2016-05-08 19:42:06",
+        "exit_at": "2016-05-08 19:42:11"
+      },
+      {
+        "subscriber_id": "333",
+        "delivery_log_id": "241",
+        "block_interaction_id": "120",
+        "block_id": "228",
+        "block_type": "Multiple Choice Question",
+        "title": "Are you in a City or a Village?",
+        "response": {
+          "choice_id": "1",
+          "choice_name": "City",
+          "choice_sms_input": null,
+          "choice_ussd_input": "1",
+          "created_at": "2016-05-08 20:02:45"
+        },
+        "number_of_repeats": "0",
+        "entry_at": "2016-05-08 20:02:45",
+        "exit_at": "2016-05-08 20:02:51"
+      },
+      {
+        "subscriber_id": "334",
+        "delivery_log_id": "242",
+        "block_interaction_id": "127",
+        "block_id": "228",
+        "block_type": "Multiple Choice Question",
+        "title": "Are you in a City or a Village?",
+        "response": {
+          "choice_id": "1",
+          "choice_name": "City",
+          "choice_sms_input": null,
+          "choice_ussd_input": "1",
+          "created_at": "2016-05-08 20:06:12"
+        },
+        "number_of_repeats": "0",
+        "entry_at": "2016-05-08 20:06:12",
+        "exit_at": "2016-05-08 20:06:20"
+      },
+      {
+        "subscriber_id": "336",
+        "delivery_log_id": "244",
+        "block_interaction_id": "135",
+        "block_id": "228",
+        "block_type": "Multiple Choice Question",
+        "title": "Are you in a City or a Village?",
+        "response": {
+          "choice_id": "1",
+          "choice_name": "City",
+          "choice_sms_input": null,
+          "choice_ussd_input": "1",
+          "created_at": "2016-05-09 01:31:12"
+        },
+        "number_of_repeats": "0",
+        "entry_at": "2016-05-09 01:31:12",
+        "exit_at": "2016-05-09 01:31:19"
+      },
+      {
+        "subscriber_id": "337",
+        "delivery_log_id": "245",
+        "block_interaction_id": "141",
+        "block_id": "228",
+        "block_type": "Multiple Choice Question",
+        "title": "Are you in a City or a Village?",
+        "response": {
+          "choice_id": null,
+          "choice_name": null,
+          "choice_sms_input": null,
+          "choice_ussd_input": null,
+          "created_at": "2016-05-09 01:41:42"
+        },
+        "number_of_repeats": "0",
+        "entry_at": "2016-05-09 01:41:42",
+        "exit_at": null
+      }
+    ]
+  },
+  "message": "Tree Block 228 Responses fetched successfully",
+  "more_info": "",
+  "pagination": null,
+  "url": "https://go.votomobile.org/api/v1/trees/10/blocks/228/interactions?api_key=2e0916e8a540a1d3e629bb173&limit="
+}
