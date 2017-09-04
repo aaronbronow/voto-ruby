@@ -20,6 +20,12 @@ describe VotoMobile::DeliveryLogs do
     check_response(client.delivery_logs_by_survey(1))
   end
 
+  it 'should fetch delivery logs by tree' do
+    client = VotoMobile::REST::Client.new('someToken')
+    stub_voto_request('trees/1/delivery_logs?limit=500', 'delivery_logs')
+    check_response(client.delivery_logs_by_tree(1))
+  end
+
   def check_response(data)
     expect(data).to be_a VotoMobile::DeliveryLogsList
     expect(data.list[0]).to be_a VotoMobile::DeliveryLog
