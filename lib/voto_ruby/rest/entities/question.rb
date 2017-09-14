@@ -10,7 +10,8 @@ module VotoMobile
                   :num_choices,
                   :options,
                   :audio_files,
-                  :sms_content
+                  :sms_content,
+                  :max_numeric_digits
 
     def responses(filters = {})
       @client.responses_by_question(@survey_id, @id, filters)
