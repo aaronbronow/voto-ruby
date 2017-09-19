@@ -10,5 +10,9 @@ module VotoMobile
                   :choice_id,
                   :choice_name,
                   :subscriber
+
+    def value
+      choice_name || numeric_response
+    end
   end
 end

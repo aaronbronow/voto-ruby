@@ -20,5 +20,13 @@ module VotoMobile
     def counts(filters = {})
       @client.question_counts(@survey_id, @id, filters)
     end
+
+    def question_choices
+      options
+    end
+
+    def question_title
+      title
+    end
   end
 end
