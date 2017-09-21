@@ -47,5 +47,17 @@ module VotoMobile
     def interactions
       @client.interactions(@tree_id, @id)
     end
+
+    def question_block?
+      type.end_with?(' Question')
+    end
+
+    def question_choices
+      details['choices']
+    end
+
+    def question_title
+      details['title']
+    end
   end
 end

@@ -19,5 +19,13 @@ module VotoMobile
     def results
       @client.tree_results(@id)
     end
+
+    def num_questions
+      @num_questions ||= num_blocks.to_i > 0 ? blocks.list.count { |block| block.question_block? } : 0
+    end
+
+    def is_tree
+      true
+    end
   end
 end

@@ -32,5 +32,9 @@ module VotoMobile
     def delivery_logs(filters = {})
       @client.delivery_logs_by_survey(@id, filters)
     end
+
+    def is_tree
+      false
+    end
   end
 end

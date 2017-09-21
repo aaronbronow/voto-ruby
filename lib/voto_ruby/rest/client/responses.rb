@@ -1,5 +1,10 @@
 module VotoMobile
   module Responses
+    def responses(full_path = nil)
+      list = ResponsesList.new(self, 'responses')
+      get_data(list, 'responses', full_path)
+    end
+
     def responses_by_question(survey_id, question_id, filters={})
       list = ResponsesList.new self, 'responses'
       data = get("surveys/#{survey_id}/questions/#{question_id}/results", filters)

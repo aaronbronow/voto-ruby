@@ -10,7 +10,8 @@ module VotoMobile
                   :num_choices,
                   :options,
                   :audio_files,
-                  :sms_content
+                  :sms_content,
+                  :max_numeric_digits
 
     def responses(filters = {})
       @client.responses_by_question(@survey_id, @id, filters)
@@ -18,6 +19,14 @@ module VotoMobile
 
     def counts(filters = {})
       @client.question_counts(@survey_id, @id, filters)
+    end
+
+    def question_choices
+      options
+    end
+
+    def question_title
+      title
     end
   end
 end

@@ -10,5 +10,9 @@ module VotoMobile
                   :number_of_repeats,
                   :entry_at,
                   :exit_at
+
+    def value
+      response['choice_name'] || response['value']
+    end
   end
 end
